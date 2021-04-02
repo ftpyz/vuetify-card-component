@@ -1,13 +1,13 @@
 <template>
   <v-card>
-    <v-card-text style="margin-top:220px">
+    <v-card-text style="margin-top:240px">
       <Card
         :cardNumber="cardNumber"
         :cardMonth="cardMonth"
         :cardYear="cardYear"
         :cardName="cardName"
         :cardCVC="cardCVC"
-        style="position:absolute;top:-170px;width:320px;height:200px"
+        style="position:absolute;top:-150px;width:320px;height:180px"
       />
     </v-card-text>
     <v-card-text>
@@ -22,6 +22,7 @@
               outlined
               hide-details
               class="elevation-2"
+              @focus="$store.commit('SET_ACTIVE_FOCUS', 'cardNumber')"
             ></v-text-field>
           </v-col>
         </v-row>
@@ -33,6 +34,7 @@
               dense
               label="Kart Sahibininin Adı"
               outlined
+              @focus="$store.commit('SET_ACTIVE_FOCUS', 'cardName')"
               hide-details
             ></v-text-field>
           </v-col>
@@ -46,6 +48,7 @@
               label="Son Kullanım Tarihi"
               outlined
               hide-details
+              @focus="$store.commit('SET_ACTIVE_FOCUS', 'cardMonthYear')"
             ></v-text-field>
           </v-col>
           <v-col cols="4"
@@ -56,6 +59,7 @@
               label="CVC"
               outlined
               hide-details
+              @focus="$store.commit('SET_ACTIVE_FOCUS', 'cardCVC')"
             ></v-text-field>
           </v-col>
         </v-row>

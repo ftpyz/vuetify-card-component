@@ -9,7 +9,8 @@ const store = new Vuex.Store({
     cardName: null,
     cardMonth: null,
     cardYear: null,
-    cardCVC: null
+    cardCVC: null,
+    activeFocus: null
   },
   mutations: {
     SET_CARD_NUMBER(state, cardNumber) {
@@ -26,6 +27,9 @@ const store = new Vuex.Store({
     },
     SET_CARD_CVC(state, cardCVC) {
       state.cardCVC = cardCVC;
+    },
+    SET_ACTIVE_FOCUS(state, activeFocus) {
+      state.activeFocus = activeFocus;
     }
   },
   getters: {
@@ -43,6 +47,9 @@ const store = new Vuex.Store({
     },
     getCardCVC(state) {
       return state.cardCVC;
+    },
+    getActiveFocus(state) {
+      return state.activeFocus;
     }
   }
 });
